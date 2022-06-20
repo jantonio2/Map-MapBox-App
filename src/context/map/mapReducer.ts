@@ -5,8 +5,12 @@ type MapAction = { type: 'setMap', payload: Map };
 
 export const mapRedducer = ( state: MapState, action: MapAction ):MapState => {
   switch ( action.type ) {
-    // case value:
-      
+    case 'setMap':
+      return {
+        ...state,
+        isMapReady: true,
+        map: action.payload
+      }
     //   break;
   
     default:
