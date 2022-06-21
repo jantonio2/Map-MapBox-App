@@ -1,9 +1,11 @@
-import { ChangeEvent, useRef } from 'react'
+import { ChangeEvent, useRef, useContext } from 'react';
+import { PlacesContext } from '../context';
 
 export const SearchBar = () => {
 
   // npm install -D @types/node @types/jasmine
   const debounceRef = useRef<NodeJS.Timeout>();
+  const { searchPlacesByTerm } = useContext(PlacesContext);
 
   const onQueryChanged = (event: ChangeEvent<HTMLInputElement>) => {
     if (debounceRef.current) 
@@ -11,7 +13,8 @@ export const SearchBar = () => {
     
     debounceRef.current = setTimeout(() => {
         //TODO: buscar consulta
-        console.log('debounce value:', event.target.value);
+        // console.log('debounce value:', event.target.value);
+        searchPlacesByTerm( event.target.value );
     }, 500);
   }
 
