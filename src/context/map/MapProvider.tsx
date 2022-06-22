@@ -74,12 +74,17 @@ export const MapProvider = ({ children }: Props) => {
     });
   }
 
+  const getRouteBetweenPoints = async(start: [number, number], end: [number, number]) => {
+
+  }
+
   return (
     <MapContext.Provider value={{
       ...state,
 
       // Methods
-      setMap
+      setMap,
+      getRouteBetweenPoints
     }}>
       { children }
     </MapContext.Provider>
