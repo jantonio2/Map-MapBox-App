@@ -12,8 +12,8 @@ export const MapView = () => {
   useLayoutEffect(() => {
     if ( !isLoading ) {
       const map = new Map({
-        container: mapDiv.current!, // container ID
-        style: 'mapbox://styles/mapbox/dark-v10',  // style URL
+        container: mapDiv.current! , // container ID
+        style: 'mapbox://styles/mapbox/light-v10', // style URL
         center: userLocation, // starting position [lng, lat]
         zoom: 14 // starting zoom
       });
